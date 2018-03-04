@@ -1,0 +1,72 @@
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition
+
+ScreenManagement:
+	transition:FadeTransition()
+	MainScreen:
+	SongChoose:
+
+
+<MainScreen>:
+	name:'main'
+	orientation:'horizontal'
+	size_hint_y:None
+	height:1150
+	Label:
+		id:'show1'
+		text:'Search for any English song lyrics.'
+		font_size:30
+		#pos_hint:{'top':1,'right':1}
+
+	BoxLayout:
+		orientation:'vertical'
+		size_hint_y:None
+		height:50
+
+		Label:
+			id:label11
+			text:'Enter name of Artist'
+			size_hint_y:None
+			font_size:30
+			pos_hint:{'top':1,'right':1}
+			
+
+		TextInput:
+			id:text11
+			size_hint_y:None
+			font_size:30
+			height:50
+
+
+		Label:
+			id:label12
+			text:'Enter name of Song'
+			size_hint_y:None
+			font_size:30
+			pos_hint:{'top':1,'right':1}
+
+		TextInput:
+			id:text12
+			size_hint_y:None
+			font_size:30
+			height:50
+
+
+
+		Button:
+			id:button11
+			on_release:app.root.current='other'
+			text:'Search'
+			font_size:25
+			size_hint:0.12,0.09
+			pos_hint:{'top':0.75,'right':0.75}
+
+
+<SongChoose>:
+	name:'other'
+	Button:
+		id:button21
+		on_release:app.root.current='main'
+		text:'Back Here!'
+		font_size:50
+		size_hint:0.3,0.2
+		pos_hint:{'top':0.75,'right':0.75}
